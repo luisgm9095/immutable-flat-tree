@@ -1,19 +1,20 @@
 {
   "name": "immutable-flat-tree",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Typescript flat tree structures with immutability as core concept",
   "author": "luisgm",
   "license": "MIT",
   "homepage": "https://github.com/luisgm9095",
   "repository": {
     "type": "git",
-    "url": "https://github.com/luisgm9095/immutable-tree"
+    "url": "https://github.com/luisgm9095/immutable-flat-tree"
   },
   "bugs": {
-    "url": "https://github.com/luisgm9095/immutable-tree/issues"
+    "url": "https://github.com/luisgm9095/immutable-flat-tree/issues"
   },
   "keywords": [
     "tree",
+    "flat",
     "immutable",
     "typescript"
   ],
