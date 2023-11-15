@@ -19,7 +19,8 @@
     "rules": {
         "indent": ["error", 2],
         "quotes": ["error", "single"],
-        "semi": ["error", "always"],
-        "arrow-spacing": "error"        
+        "semi": ["error", "never"],
+        "arrow-spacing": "error",
+        "comma-spacing": "error"
     }
 }

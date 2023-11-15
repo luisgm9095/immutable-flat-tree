@@ -1,6 +1,6 @@
 {
   "name": "immutable-flat-tree",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typescript flat tree structures with immutability as core concept",
   "author": "luisgm",
   "license": "MIT",

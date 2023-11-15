@@ -1,4 +1,14 @@
-export const exampleData = ['123', '456', '789'];
-export const addToArray = (value: string) => {
-  exampleData.push(value);
-};
+export {
+  createTree,
+  createTreeNode
+} from './reducers/create'
+
+export {
+  deleteTreeNodeChildren,
+  deleteTreeNode
+} from './reducers/delete'
+
+export {
+  updateTreeNodeParent,
+  updateTreeNodeValue
+} from './reducers/update'
