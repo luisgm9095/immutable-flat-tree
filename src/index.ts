@@ -12,3 +12,7 @@ export {
   updateTreeNodeParent,
   updateTreeNodeValue
 } from './reducers/update'
+
+export {
+  getOrderedTreeNodes
+} from './utils/order'
