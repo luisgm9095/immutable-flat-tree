@@ -35,26 +35,20 @@ export const createTree = <T>(rootValue: T, rootId: Id): Tree<T> =>
  * // └─ c - value C
  * //
  */
-export const createTreeNode = <T>(value: T, id: Id, parentId: Id) => 
-/**
- * Tree reducer function
- * @param tree - the tree to update with a new tree node
- * @returns A new updated tree
- */
-  (tree: Tree<T>): Tree<T> => {
-    const parent = tree.nodeMap[parentId]
-    const overridedNode = tree.nodeMap[id]
-    const oldParent = overridedNode?.parentId ? tree.nodeMap[overridedNode.parentId] : undefined
-    //Ensure parent exists and is does not have the same id
-    return parent && parentId !== id
-      ? compose<Tree<T>>(
-        // First, delete children (if it's an override)
-        deleteTreeNodeChildren(id),
-        // Update old parent child (if there is an override)
-        oldParent ? setNode(removeChild(id)(oldParent)) : ((tree) => tree),
-        // Update direct parent (add id to children)
-        setNode(addChild(id)(parent)),         
-        // Lastly, create it (overrides any existing one)
-        setNode(createLeaf(value, id, parent)) 
-      )(tree) : tree
-  }
+export const createTreeNode = <T>(value: T, id: Id, parentId: Id) => (tree: Tree<T>): Tree<T> => {
+  const parent = tree.nodeMap[parentId]
+  const overridedNode = tree.nodeMap[id]
+  const oldParent = overridedNode?.parentId ? tree.nodeMap[overridedNode.parentId] : undefined
+  //Ensure parent exists and is does not have the same id
+  return parent && parentId !== id
+    ? compose<Tree<T>>(
+      // First, delete children (if it's an override)
+      deleteTreeNodeChildren(id),
+      // Update old parent child (if there is an override)
+      oldParent ? setNode(removeChild(id)(oldParent)) : ((tree) => tree),
+      // Update direct parent (add id to children)
+      setNode(addChild(id)(parent)),         
+      // Lastly, create it (overrides any existing one)
+      setNode(createLeaf(value, id, parent)) 
+    )(tree) : tree
+}
